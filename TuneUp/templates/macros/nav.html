@@ -1,0 +1,11 @@
+{% macro header() %}
+<header class="header">
+    <div class="nav-container">
+        <a href="{{ url_for('pages.index') }}" class="header__logo">
+            <img src="static/images/logo.png" alt="Forcepoint" width="36" height="36">
+        </a>
+        <div class="logo__name">ServTool</div>
+        
+    </div>
+</header>
+{% endmacro %}

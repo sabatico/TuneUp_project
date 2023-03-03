@@ -1,0 +1,49 @@
+{% from "macros/nav.html" import header %}
+{% from "macros/svgs.html" import tuneUp_icon %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{{ title | default('TuneUp utility') }}</title>
+        <link href="https://fonts.googleapis.com/css?family=Public+Sans:400,600&display=swap" rel='stylesheet'/>
+        <link rel="stylesheet" type="text/css"  href="{{ url_for('static', filename='css/main.css') }}" />
+        <meta name="robots" content="noindex">
+        {% block head_content%} 
+        {% endblock %}
+    </head>
+
+    <body class="body">
+        {{ header() }}
+        <main class="main">
+
+            <div class="main__content">
+                <div class="main__content--left">
+                    <div class="menu__button">
+                        <a href="" class="menu__button--link">
+                            <div class ="menu_button--left">.
+                            </div>
+                            <div class="menu_button--right">
+                                {{ tuneUp_icon("tuneUp_icon") }}
+                                <p class="menu_button--right--text">TuneUp</p>
+                            </div>
+                        </a>
+                 
+                    </div>
+                </div>
+                <div class="main__content--right">
+                    {% block main_content  %}
+                    {% endblock %}
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+        <div class="footer__signature">Forcepoint Technical Support, 2023</div>
+        </footer>
+    </body>
+        
+
+</html>
