@@ -18,6 +18,6 @@ class DataFactory():
             print(k)
             progress_level += 100/len(self.mock_data) 
             self.collection_progress.append([k,progress_level])
-            #sleep(2)
+            sleep(2)
         return self.collection_progress
 

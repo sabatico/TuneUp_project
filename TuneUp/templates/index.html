@@ -4,6 +4,12 @@
 {% endblock %}
 
 {% block main_content %}
-    Hello
+    <div class="collectData__container">
+        <a class="collectData__button--link" href="{{url_for('pages.index', collect='start')}}">
+            <div class="collectData__button">
+                Collect Data
+            </div>
+        </a>
+    </div>
 
 {% endblock %}
