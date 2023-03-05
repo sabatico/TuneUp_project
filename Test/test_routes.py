@@ -33,10 +33,14 @@ def test_index_starts_thread(app, mocker):
     
 
 def test_get_data_collection_progress(app,monkeypatch):
-    mock_data= [["cpu", 25.0], ["memory", 50.0], ["disk", 75.0], ["network", 100.0]]
-    monkeypatch.setattr('routes.index.data_collection',mock_data)
+    mock_data= [["cpu", 25.0]]
+    
     
     with app.test_client() as client:
-        
+        client.get("/?collect=start")
         response = client.get("/get_data_collection_progress")
+        print(response)
         assert response.status_code == 200
+        #this assertion is using mock-data from the main code, , expected to crash later, i dont know how to mock it
+        assert response.json == mock_data
+        
